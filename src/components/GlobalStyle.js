@@ -9,9 +9,24 @@ const GlobalStyle = createGlobalStyle`
   
   body {
     background: #1b1b1b;
+    /* font-family: 'Abril Fatface', cursive; */
+    font-family: 'Inter', sans-serif;
+    /* font-family: 'JetBrains Mono', monospace; */
+    /* font-family: 'Lato', sans-serif; */
+    /* font-family: 'Lobster Two', cursive; */
+    /* font-family: 'Montserrat', sans-serif; */
+    /* font-family: 'Nunito', sans-serif; */
+    /* font-family: 'Poppins', sans-serif; */
+    /* font-family: 'Roboto', sans-serif; */
+    /* font-family: 'Rubik', sans-serif; */
+    /* font-family: 'Space Grotesk', sans-serif; */
+    /* font-family: 'Space Mono', monospace; */
+    /* font-family: 'Trispace', sans-serif; */
+    /* font-family: 'Work Sans', sans-serif; */
   }
 
   button {
+    font-family: 'Inter', sans-serif;
     font-weight: bold;
     font-size: 1.1rem;
     cursor: pointer;
@@ -49,7 +64,7 @@ const GlobalStyle = createGlobalStyle`
 
   p {
     padding: 3rem 0rem;
-    color #ccc;
+    color: #ccc;
     font-size: 1.4rem;
     line-height: 150%;
   }
