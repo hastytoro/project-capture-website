@@ -1,5 +1,9 @@
 import React from "react";
 import styled from "styled-components";
+// Import Link and add some global navigation.
+// React Router is now controlling the URL!
+// We don't have any routes that render when the URL changes yet here.
+// But Link is changing the URL "without" causing a full-page reload.
 import { Link } from "react-router-dom";
 
 const Nav = () => {
