@@ -3,55 +3,42 @@ import home1 from "../img/home1.png";
 import { About, Description, Image, Hide } from "../styles";
 // Framer motion imports
 import { motion } from "framer-motion";
+import {
+  pageAnimation,
+  titleAnimation,
+  fadeAnimation,
+  photoAnimation,
+} from "../animation";
 
 const AboutSection = () => {
-  // Variants allow you to define animation states and organize them by name.
-  // They allow you to control animations throughout a component tree.
-  // And by switching a single `animate` prop.
-  // Parent variant:
-  const container = {
-    // from/start/enter
-    hidden: { x: 100 },
-    // to/end/leave
-    show: {
-      x: 0,
-      transition: {
-        duration: 0.75,
-        ease: "easeOut",
-        staggerChildren: 0.75,
-      },
-    },
-  };
-
-  // Child variant inherits from parent and can staggerChildren:
-  const titleAnim = {
-    hidden: { opacity: 0 },
-    show: { opacity: 1, transition: { duration: 2 } },
-  };
   return (
-    <About>
+    <About variants={pageAnimation}>
       <Description>
         <motion.div>
           <Hide>
-            <motion.h2>Our work makes</motion.h2>
+            <motion.h2 variants={titleAnimation}>Our work makes</motion.h2>
           </Hide>
           <Hide>
-            <motion.h2>
+            <motion.h2 variants={titleAnimation}>
               your <span>dreams</span> come
             </motion.h2>
           </Hide>
           <Hide>
-            <motion.h2>true.</motion.h2>
+            <motion.h2 variants={titleAnimation}>true.</motion.h2>
           </Hide>
         </motion.div>
-        <p>
+        <motion.p variants={fadeAnimation}>
           Contact us for any photography ideas that you have, we have
           professions with amazing skills.
-        </p>
-        <button>Contact Us</button>
+        </motion.p>
+        <motion.button variants={fadeAnimation}>Contact Us</motion.button>
       </Description>
       <Image>
-        <img src={home1} alt="man holding camera" />
+        <motion.img
+          variants={photoAnimation}
+          src={home1}
+          alt="man holding camera"
+        />
       </Image>
     </About>
   );
