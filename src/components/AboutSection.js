@@ -31,22 +31,17 @@ const AboutSection = () => {
   return (
     <About>
       <Description>
-        <motion.div
-          variants={container}
-          initial="hidden"
-          animate="show"
-          className="title"
-        >
+        <motion.div>
           <Hide>
-            <motion.h2 variants={titleAnim}>Our work makes</motion.h2>
+            <motion.h2>Our work makes</motion.h2>
           </Hide>
           <Hide>
-            <motion.h2 variants={titleAnim}>
+            <motion.h2>
               your <span>dreams</span> come
             </motion.h2>
           </Hide>
           <Hide>
-            <motion.h2 variants={titleAnim}>true.</motion.h2>
+            <motion.h2>true.</motion.h2>
           </Hide>
         </motion.div>
         <p>

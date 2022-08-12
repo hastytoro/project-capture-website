@@ -3,10 +3,12 @@ import styled from "styled-components";
 import { useLocation } from "react-router-dom";
 // Import static data example:
 import { MovieState } from "../movieState";
+// Animations
+import { motion } from "framer-motion";
+import { pageAnimation } from "../animation";
 
 const MovieDetail = () => {
-  const location = useLocation();
-  const url = location.pathname; // Current client url path
+  const url = useLocation().pathname; // Current client url path
   const [movies, setMovies] = useState(MovieState);
   // Here we extract the movie from movies based on the url.
   const [movie, setMovie] = useState(null);
@@ -24,7 +26,12 @@ const MovieDetail = () => {
       Therefore, if true, the element right after && appears in the output
       If it is false, React will ignore and skip it. */}
       {movie && (
-        <Details>
+        <Details
+          variants={pageAnimation}
+          initial="hidden"
+          animate="show"
+          exit="exit"
+        >
           <HeadLine>
             <h2>{movie.title}</h2>
             <img src={movie.mainImg} alt="movie" />
@@ -43,7 +50,7 @@ const MovieDetail = () => {
   );
 };
 
-const Details = styled.div`
+const Details = styled(motion.div)`
   color: white;
 `;
 

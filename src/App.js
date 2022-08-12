@@ -11,27 +11,38 @@ import MovieDetail from "./pages/MovieDetail";
 import NavBar from "./components/Nav";
 // React router dom components
 // Here we render our app at different URLs by creating our "route config".
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
+// `AnimatePresence` required for page transitions:
+// It enables the animation of components that have been removed from the tree.
+// When adding/removing more than a single child, they need a unique `key` prop.
+// Any `motion` components that `exit` property defined will then animate out.
+
+// With exitBeforeEnter true, will ensure we render one component at a time.
+// The exit component will finish its exit animation before entering rendered.
+import { AnimatePresence } from "framer-motion";
 
 function App() {
+  const location = useLocation();
   return (
-    <div className="App">
+    <div>
       <GlobalStyle />
       <NavBar />
-      <Routes>
-        <Route path="/" exact element={<AboutUs />} />
-        <Route path="/work" exact element={<OurWork />} />
-        <Route path="/work/:id" element={<MovieDetail />} />
-        <Route path="/contact" element={<ContactUs />} />
-        <Route
-          path="*"
-          element={
-            <main style={{ padding: "1rem" }}>
-              <p>404: route not found!</p>
-            </main>
-          }
-        />
-      </Routes>
+      <AnimatePresence exitBeforeEnter>
+        <Routes location={location} key={location.pathname}>
+          <Route path="/" exact element={<AboutUs />} />
+          <Route path="/work" exact element={<OurWork />} />
+          <Route path="/work/:id" element={<MovieDetail />} />
+          <Route path="/contact" element={<ContactUs />} />
+          <Route
+            path="*"
+            element={
+              <main style={{ padding: "1rem" }}>
+                <p>404: route not found!</p>
+              </main>
+            }
+          />
+        </Routes>
+      </AnimatePresence>
     </div>
   );
 }
