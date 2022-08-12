@@ -43,7 +43,7 @@ const GlobalStyle = createGlobalStyle`
   }
   
   h2 {
-    font-weight: lighter;
+    font-weight: normal;
     font-size: 4rem;
   }
 
@@ -60,8 +60,6 @@ const GlobalStyle = createGlobalStyle`
   a {
     font-size: 1.1rem;
   }
-
-
   p {
     padding: 3rem 0rem;
     color: #ccc;

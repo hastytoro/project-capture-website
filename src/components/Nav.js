@@ -51,8 +51,9 @@ const NavBar = styled.nav`
   }
   #logo {
     font-size: 1.5rem;
-    font-family: "Abril Fatface", cursive;
-    font-weight: lighter;
+    font-family: "Lobster Two", cursive;
+    font-style: italic;
+    /* font-weight: lighter; */
   }
 `;
 
