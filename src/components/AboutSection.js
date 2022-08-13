@@ -13,6 +13,8 @@ import {
   photoAnimation,
 } from "../animation";
 
+import ScrollTop from "../ScrollTop";
+
 const AboutSection = () => {
   return (
     <About variants={pageAnimation}>
@@ -44,6 +46,7 @@ const AboutSection = () => {
         />
       </Image>
       <Wave />
+      <ScrollTop />
     </About>
   );
 };

@@ -21,6 +21,7 @@ import {
 } from "../animation";
 
 import { useScroll } from "../useScroll";
+import ScrollTop from "../ScrollTop";
 
 const OurWork = () => {
   const [element1, controls1] = useScroll(0.5);
@@ -78,6 +79,7 @@ const OurWork = () => {
           </Hide>
         </Link>
       </Movie>
+      <ScrollTop />
     </Work>
   );
 };

@@ -23,6 +23,9 @@ const GlobalStyle = createGlobalStyle`
     /* font-family: 'Space Mono', monospace; */
     /* font-family: 'Trispace', sans-serif; */
     /* font-family: 'Work Sans', sans-serif; */
+
+    /* prevents image overflowing in scaling down animation */
+    overflow-x: hidden;  
   }
 
   button {

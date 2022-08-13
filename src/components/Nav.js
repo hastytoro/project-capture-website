@@ -30,6 +30,10 @@ const Nav = () => {
 };
 
 const NavBar = styled.nav`
+  position: sticky;
+  top: 0;
+  z-index: 99;
+
   min-height: 10vh;
   display: flex;
   justify-content: space-between;
