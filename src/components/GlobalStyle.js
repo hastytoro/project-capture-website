@@ -66,6 +66,11 @@ const GlobalStyle = createGlobalStyle`
     font-size: 1.4rem;
     line-height: 150%;
   }
+
+  img {
+    border: none;
+    border-radius: 2px;
+  }
 `;
 
 export default GlobalStyle;

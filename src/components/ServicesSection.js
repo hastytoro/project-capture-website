@@ -6,12 +6,19 @@ import teamwork from "../img/teamwork.svg";
 import home2 from "../img/home2.png";
 
 import styled from "styled-components";
-
-import { About, Description, Image, Hide } from "../styles";
+import { About, Description, Image } from "../styles";
+import { scrollAnimation } from "../animation";
+import { useScroll } from "../useScroll";
 
 const ServicesSection = () => {
+  const [element, controls] = useScroll(); // custom hook.
   return (
-    <Services>
+    <Services
+      ref={element}
+      animate={controls}
+      initial="hidden"
+      variants={scrollAnimation}
+    >
       <Description>
         <h2>
           High <span>quality</span> services.
@@ -19,7 +26,7 @@ const ServicesSection = () => {
         <Cards>
           <Card>
             <div className="icon">
-              <img src={clock} />
+              <img src={clock} alt="" />
               <h3>Efficient</h3>
             </div>
             <p>Lorem ipsum dolor sit amet.</p>
@@ -27,7 +34,7 @@ const ServicesSection = () => {
 
           <Card>
             <div className="icon">
-              <img src={teamwork} />
+              <img src={teamwork} alt="" />
               <h3>Teamwork</h3>
             </div>
             <p>Lorem ipsum dolor sit amet.</p>
@@ -35,7 +42,7 @@ const ServicesSection = () => {
 
           <Card>
             <div className="icon">
-              <img src={diaphragm} />
+              <img src={diaphragm} alt="" />
               <h3>Diaphragm</h3>
             </div>
             <p>Lorem ipsum dolor sit amet.</p>
@@ -43,7 +50,7 @@ const ServicesSection = () => {
 
           <Card>
             <div className="icon">
-              <img src={money} />
+              <img src={money} alt="" />
               <h3>Affordable</h3>
             </div>
             <p>Lorem ipsum dolor sit amet.</p>
@@ -51,7 +58,7 @@ const ServicesSection = () => {
         </Cards>
       </Description>
       <Image>
-        <img src={home2} />
+        <img src={home2} alt="" />
       </Image>
     </Services>
   );

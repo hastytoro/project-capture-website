@@ -73,6 +73,7 @@ export const lineAnimation = {
   },
 };
 
+// Below are more of scrolling animation types.
 // Secondary parent container to prevent above parent stagger from applying.
 export const sliderWrapperAnimation = {
   hidden: { opacity: 1 },
@@ -93,6 +94,23 @@ export const sliderAnimation = {
     transition: {
       duration: 1,
       ease: "easeOut",
+    },
+  },
+};
+
+export const scrollAnimation = {
+  hidden: {
+    opacity: 0,
+    scale: 1.2,
+    transition: {
+      duration: 0.5,
+    },
+  },
+  show: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration: 0.5,
     },
   },
 };
