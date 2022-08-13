@@ -59,6 +59,23 @@ const NavBar = styled.nav`
     font-style: italic;
     /* font-weight: lighter; */
   }
+  @media (max-width: 1300px) {
+    flex-direction: column;
+    padding: 1rem;
+    #logo {
+      // Remember that inline elements can't have height attributes.
+      display: inline-block;
+      margin: 1rem;
+    }
+    ul {
+      padding: 2rem;
+      justify-content: space-around;
+      width: 100%;
+    }
+    li {
+      padding: 0;
+    }
+  }
 `;
 
 export default Nav;

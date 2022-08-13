@@ -24,8 +24,8 @@ import { useScroll } from "../useScroll";
 import ScrollTop from "../ScrollTop";
 
 const OurWork = () => {
-  const [element1, controls1] = useScroll(0.5);
-  const [element2, controls2] = useScroll(0.5);
+  const [element1, controls1] = useScroll(0.3);
+  const [element2, controls2] = useScroll(0.3);
 
   return (
     <Work
@@ -88,6 +88,9 @@ const Work = styled(motion.div)`
   min-height: 100vh;
   overflow: hidden; /* for any overflowing animation  */
   padding: 5rem 10rem; /* lines up with Nav as container  */
+  @media (max-width: 1300px) {
+    padding: 2rem 2rem;
+  }
 `;
 
 const Movie = styled(motion.div)`

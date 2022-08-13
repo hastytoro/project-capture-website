@@ -11,7 +11,7 @@ import { scrollAnimation } from "../animation";
 import { useScroll } from "../useScroll";
 
 const ServicesSection = () => {
-  const [element, controls] = useScroll(0.5); // custom hook.
+  const [element, controls] = useScroll(0.3); // custom hook.
   return (
     <Services
       ref={element}
@@ -77,6 +77,9 @@ const Services = styled(About)`
 const Cards = styled.div`
   display: flex;
   flex-wrap: wrap;
+  @media (max-width: 1300px) {
+    justify-content: center;
+  }
 `;
 
 const Card = styled.div`

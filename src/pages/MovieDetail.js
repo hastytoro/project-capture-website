@@ -77,6 +77,9 @@ const Awards = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
+  @media (max-width: 1300px) {
+    flex-direction: column;
+  }
 `;
 
 const AwardsStyle = styled.div`
