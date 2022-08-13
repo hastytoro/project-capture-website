@@ -4,9 +4,11 @@ import styled from "styled-components";
 // React Router is now controlling the URL!
 // We don't have any routes that render when the URL changes yet here.
 // But Link is changing the URL "without" causing a full-page reload.
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Nav = () => {
+  const { pathname } = useLocation();
   return (
     <NavBar>
       <h1>
@@ -17,12 +19,27 @@ const Nav = () => {
       <ul>
         <li>
           <Link to="/">1. About Us</Link>
+          <Line
+            transition={{ duration: 0.75 }}
+            initial={{ width: "0%" }}
+            animate={{ width: pathname === "/" ? "50%" : "0%" }}
+          />
         </li>
         <li>
           <Link to="/work">2. Our Work</Link>
+          <Line
+            transition={{ duration: 0.75 }}
+            initial={{ width: "0%" }}
+            animate={{ width: pathname === "/work" ? "50%" : "0%" }}
+          />
         </li>
         <li>
           <Link to="/contact">3. Contact Us</Link>
+          <Line
+            transition={{ duration: 0.75 }}
+            initial={{ width: "0%" }}
+            animate={{ width: pathname === "/contact" ? "50%" : "0%" }}
+          />
         </li>
       </ul>
     </NavBar>
@@ -75,6 +92,18 @@ const NavBar = styled.nav`
     li {
       padding: 0;
     }
+  }
+`;
+
+const Line = styled(motion.div)`
+  height: 0.3rem;
+  background: #23d997;
+  width: 0%;
+  position: absolute;
+  bottom: -80%;
+  left: 60%;
+  @media (max-width: 1300px) {
+    left: 0%;
   }
 `;
 
