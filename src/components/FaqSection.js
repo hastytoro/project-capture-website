@@ -5,72 +5,57 @@ import { About } from "../styles";
 // Reusable component:
 import Toggle from "./Toggle";
 
+import { AnimateSharedLayout } from "framer-motion";
+// If you wrapping a component with a framer motion component, you need to apply
+// `motion` to the underlining child component you wrap for it to animate.
+// Within `Toggle` we wrapped elements with `motion` and the layout attribute.
 const FaqSection = () => {
   return (
     <Faq>
       <h2>
         Any Questions <span>FAQ</span>
       </h2>
-
-      <div className="question">
-        <Toggle>
-          <h4>How Do I Start?</h4>
+      <AnimateSharedLayout>
+        <Toggle title="How Do I Start?">
           <div className="answer">
             <p>Lorem ipsum dolor sit amet.</p>
             <p>
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa,
-              maxime. Explicabo, recusandae sed. Perspiciatis, eum voluptatibus
-              illo velit quia dolorem.
+              maxime. Explicabo, recusandae sed.
             </p>
           </div>
         </Toggle>
-        <div className="faq-line"></div>
-      </div>
 
-      <div className="question">
-        <Toggle>
-          <h4>Daily Schedule</h4>
+        <Toggle title="Daily Schedule">
           <div className="answer">
             <p>Lorem ipsum dolor sit amet.</p>
             <p>
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa,
-              maxime. Explicabo, recusandae sed. Perspiciatis, eum voluptatibus
-              illo velit quia dolorem.
+              maxime. Explicabo, recusandae sed.
             </p>
           </div>
         </Toggle>
-        <div className="faq-line"></div>
-      </div>
 
-      <div className="question">
-        <Toggle>
-          <h4>Different Payment Methods</h4>
+        <Toggle title="Different Payment Methods">
           <div className="answer">
             <p>Lorem ipsum dolor sit amet.</p>
             <p>
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa,
-              maxime. Explicabo, recusandae sed. Perspiciatis, eum voluptatibus
-              illo velit quia dolorem.
+              maxime. Explicabo, recusandae sed.
             </p>
           </div>
         </Toggle>
-        <div className="faq-line"></div>
-      </div>
 
-      <div className="question">
-        <Toggle>
-          <h4>What Products do you offer</h4>
+        <Toggle title="What Products do you offer">
           <div className="answer">
             <p>Lorem ipsum dolor sit amet.</p>
             <p>
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa,
-              maxime. Explicabo, recusandae sed. Perspiciatis, eum voluptatibus
-              illo velit quia dolorem.
+              maxime. Explicabo, recusandae sed.
             </p>
           </div>
         </Toggle>
-        <div className="faq-line"></div>
-      </div>
+      </AnimateSharedLayout>
     </Faq>
   );
 };
