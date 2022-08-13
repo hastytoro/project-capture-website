@@ -6,13 +6,13 @@ import { useAnimation } from "framer-motion";
 // `useAnimation` is a way for you to control a animation in framer-motion.
 // By default our `motion` components have `initial` and `animate` positions
 // So when a `motion` component is rendered to screen it animates immediately.
-// However `useAnimation` allows you to control when that occurs instead.
-// For example onClick or in case below when the element is in view.
+// But with `useAnimation` we can control when that occurs instead.
+// For example onClick triggers or below when the element is in `view`.
 
 // CUSTOM HOOK:
-export const useScroll = () => {
+export const useScroll = (time) => {
   const controls = useAnimation();
-  const [element, view] = useInView({ threshold: 0.5 });
+  const [element, view] = useInView({ threshold: time });
   if (view) {
     controls.start("show");
   } else {

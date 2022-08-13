@@ -10,7 +10,7 @@ import goodtimes from "../img/goodtimes-small.png";
 import { Hide } from "../styles";
 
 // Animations
-import { motion } from "framer-motion";
+import { LazyMotion, motion } from "framer-motion";
 import {
   fadeAnimation,
   pageAnimation,
@@ -20,7 +20,12 @@ import {
   sliderWrapperAnimation,
 } from "../animation";
 
+import { useScroll } from "../useScroll";
+
 const OurWork = () => {
+  const [element1, controls1] = useScroll(0.5);
+  const [element2, controls2] = useScroll(0.5);
+
   return (
     <Work
       variants={pageAnimation}
@@ -35,6 +40,7 @@ const OurWork = () => {
         <FrameO3 variants={sliderAnimation}></FrameO3>
         <FrameO4 variants={sliderAnimation}></FrameO4>
       </motion.div>
+
       <Movie>
         <motion.h2 variants={fadeAnimation}>The Athlete</motion.h2>
         <motion.div variants={lineAnimation} className="line"></motion.div>
@@ -44,7 +50,8 @@ const OurWork = () => {
           </Hide>
         </Link>
       </Movie>
-      <Movie>
+
+      <Movie ref={element1} variants={fadeAnimation} animate={controls1}>
         <motion.h2 variants={fadeAnimation}>The Racer</motion.h2>
         <motion.div variants={lineAnimation} className="line"></motion.div>
         <Link to="/work/the-racer">
@@ -57,7 +64,8 @@ const OurWork = () => {
           </Hide>
         </Link>
       </Movie>
-      <Movie>
+
+      <Movie ref={element2} variants={fadeAnimation} animate={controls2}>
         <motion.h2 variants={fadeAnimation}>Good Times</motion.h2>
         <motion.div variants={lineAnimation} className="line"></motion.div>
         <Link to="/work/good-times">
@@ -80,7 +88,7 @@ const Work = styled(motion.div)`
   padding: 5rem 10rem; /* lines up with Nav as container  */
 `;
 
-const Movie = styled.div`
+const Movie = styled(motion.div)`
   padding-bottom: 10rem;
   .line {
     height: 0.5rem;

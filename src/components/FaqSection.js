@@ -17,7 +17,7 @@ import { AnimateSharedLayout } from "framer-motion";
 // This will perform a `layout` animation using performant transforms.
 // To correct position distortion on immediate `children`, add layout to them.
 const FaqSection = () => {
-  const [element, controls] = useScroll(); // custom hook.
+  const [element, controls] = useScroll(0.5); // custom hook.
   return (
     <Faq
       ref={element}

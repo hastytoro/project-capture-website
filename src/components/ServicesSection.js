@@ -11,7 +11,7 @@ import { scrollAnimation } from "../animation";
 import { useScroll } from "../useScroll";
 
 const ServicesSection = () => {
-  const [element, controls] = useScroll(); // custom hook.
+  const [element, controls] = useScroll(0.5); // custom hook.
   return (
     <Services
       ref={element}
