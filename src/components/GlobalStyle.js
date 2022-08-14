@@ -1,7 +1,9 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
-  *{
+  *,
+  *::before,
+  *::after {
     margin: 0;
     padding: 0 ;
     box-sizing: border-box;
@@ -10,7 +12,7 @@ const GlobalStyle = createGlobalStyle`
   /* Handle font size with percentage */
   html {
     @media (max-width: 1700px){
-      font-size: 75%;
+      font-size: 90%;
     }
     @media (max-width: 1300px){
     }
@@ -18,7 +20,7 @@ const GlobalStyle = createGlobalStyle`
   
   body {
     background: #1b1b1b;
-    /* font-family: 'Abril Fatface', cursive; */
+    /* font-family: 'Abril Fatface', sans-serif; */
     font-family: 'Inter', sans-serif;
     /* font-family: 'JetBrains Mono', monospace; */
     /* font-family: 'Lato', sans-serif; */
@@ -38,11 +40,12 @@ const GlobalStyle = createGlobalStyle`
   }
 
   button {
-    font-family: 'Inter', sans-serif;
+    font-family: "Space Mono";
     font-weight: bold;
     font-size: 1.1rem;
     cursor: pointer;
     padding: 1rem 2rem;
+    border-radius: 2px;
     border: 3px solid #23d997;
     background: transparent;
     color: white;
@@ -52,6 +55,10 @@ const GlobalStyle = createGlobalStyle`
       background: #23d997;
       color: white;
     }
+  }
+
+  h1,h2,h3{
+    font-family: 'Space Grotesk', sans-serif;
   }
   
   h2 {
@@ -70,7 +77,7 @@ const GlobalStyle = createGlobalStyle`
     color: #23d997;
   }
   a {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
   }
   p {
     padding: 3rem 0rem;

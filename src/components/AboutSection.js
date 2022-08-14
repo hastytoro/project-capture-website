@@ -29,12 +29,13 @@ const AboutSection = () => {
             </motion.h2>
           </Hide>
           <Hide>
-            <motion.h2 variants={titleAnimation}>true.</motion.h2>
+            <motion.h2 variants={titleAnimation}>come true</motion.h2>
           </Hide>
         </motion.div>
         <motion.p variants={fadeAnimation}>
-          Contact us for any photography ideas that you have, we have
-          professions with amazing skills.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
+          cupiditate vero in, blanditiis odio ad incidunt saepe! Dolorem, omnis
+          explicabo.
         </motion.p>
         <motion.button variants={fadeAnimation}>Contact Us</motion.button>
       </Description>

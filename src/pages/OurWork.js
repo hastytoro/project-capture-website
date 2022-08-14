@@ -10,7 +10,7 @@ import goodtimes from "../img/goodtimes-small.png";
 import { Hide } from "../styles";
 
 // Animations
-import { LazyMotion, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import {
   fadeAnimation,
   pageAnimation,

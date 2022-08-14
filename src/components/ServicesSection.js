@@ -21,7 +21,7 @@ const ServicesSection = () => {
     >
       <Description>
         <h2>
-          High <span>quality</span> services.
+          High <span>quality</span> services
         </h2>
         <Cards>
           <Card>
@@ -88,7 +88,8 @@ const Card = styled.div`
     display: flex;
     align-items: center;
     h3 {
-      margin-left: 1rem;
+      border-radius: 2px;
+      margin-left: 1.4rem;
       background: white;
       color: black;
       padding: 1rem;

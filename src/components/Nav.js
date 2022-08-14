@@ -18,7 +18,7 @@ const Nav = () => {
       </h1>
       <ul>
         <li>
-          <Link to="/">1. About Us</Link>
+          <Link to="/">About Us</Link>
           <Line
             transition={{ duration: 0.75 }}
             initial={{ width: "0%" }}
@@ -26,36 +26,36 @@ const Nav = () => {
           />
         </li>
         <li>
-          <Link to="/work">2. Our Work</Link>
+          <Link to="/work">Our Work</Link>
           <Line
             transition={{ duration: 0.75 }}
             initial={{ width: "0%" }}
             animate={{ width: pathname === "/work" ? "50%" : "0%" }}
           />
         </li>
-        <li>
-          <Link to="/contact">3. Contact Us</Link>
+        {/* <li>
+          <Link to="/contact">Contact Us</Link>
           <Line
             transition={{ duration: 0.75 }}
             initial={{ width: "0%" }}
             animate={{ width: pathname === "/contact" ? "50%" : "0%" }}
           />
-        </li>
+        </li> */}
       </ul>
     </NavBar>
   );
 };
 
 const NavBar = styled.nav`
+  font-family: "Space Mono", sans-serif;
   position: sticky;
   top: 0;
-  z-index: 99;
+  z-index: 9999999;
 
   min-height: 10vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: auto;
   padding: 1rem 10rem;
   background: #282828;
   a {
@@ -71,26 +71,24 @@ const NavBar = styled.nav`
     position: relative;
   }
   #logo {
-    font-size: 1.5rem;
-    font-family: "Lobster Two", cursive;
-    font-style: italic;
-    /* font-weight: lighter; */
+    font-size: 2rem;
+    font-family: "Space Mono";
+    font-weight: lighter;
   }
   @media (max-width: 1300px) {
-    flex-direction: column;
-    padding: 1rem;
+    padding: 1rem 2.5rem;
     #logo {
-      // Remember that inline elements can't have height attributes.
-      display: inline-block;
-      margin: 1rem;
+      /* margin: 2rem; */
+      padding-right: 1.6rem;
     }
     ul {
-      padding: 2rem;
-      justify-content: space-around;
-      width: 100%;
+      margin-top: 0.5rem;
+      padding: 1rem;
+      /* width: 100%; */
     }
     li {
-      padding: 0;
+      padding: 0rem;
+      margin: 1.5rem;
     }
   }
 `;
@@ -100,10 +98,11 @@ const Line = styled(motion.div)`
   background: #23d997;
   width: 0%;
   position: absolute;
-  bottom: -80%;
-  left: 60%;
+  bottom: -60%;
+  left: 50%;
   @media (max-width: 1300px) {
     left: 0%;
+    height: 0.2rem;
   }
 `;
 

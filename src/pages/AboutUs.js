@@ -7,6 +7,7 @@ import ServicesSection from "../components/ServicesSection";
 // Animations
 import { motion } from "framer-motion";
 import { pageAnimation } from "../animation";
+import ScrollTop from "../ScrollTop";
 
 // Page component is the acting container for above related components.
 const AboutUs = () => {
@@ -20,6 +21,7 @@ const AboutUs = () => {
       <AboutSection />
       <ServicesSection />
       <FaqSection />
+      <ScrollTop />
     </motion.div>
   );
 };

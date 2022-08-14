@@ -16,6 +16,7 @@ const MovieDetail = () => {
   useEffect(() => {
     // We comparing the data with the current client browser url.
     const currentMovie = movies.filter((stateMovie) => stateMovie.url === url);
+    console.log(currentMovie);
     setMovie(currentMovie[0]);
   }, [movies, url]);
   return (
@@ -42,11 +43,21 @@ const MovieDetail = () => {
             ))}
           </Awards>
           <ImageDisplay>
-            <img src={movie.secondaryImg} />
+            <img src={movie.secondaryImg} alt="" />
           </ImageDisplay>
         </Details>
       )}
     </>
+  );
+};
+
+const Award = ({ title, description }) => {
+  return (
+    <AwardsStyle>
+      <h3>{title}</h3>
+      <div className="line"></div>
+      <p>{description}</p>
+    </AwardsStyle>
   );
 };
 
@@ -106,15 +117,5 @@ const ImageDisplay = styled.div`
     object-fit: cover;
   }
 `;
-
-const Award = ({ title, description }) => {
-  return (
-    <AwardsStyle>
-      <h3>{title}</h3>
-      <div className="line"></div>
-      <p>{description}</p>
-    </AwardsStyle>
-  );
-};
 
 export default MovieDetail;
